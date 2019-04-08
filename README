@@ -1,42 +1,67 @@
 Castlevania Aria of Sorrow Item Randomizer
-Version:    9
+Version:    9.1
 Date:       May 08, 2018
-URL:        https://github.com/abyssonym/aos_rando
-Contact:    https://twitter.com/abyssonym
-            https://www.twitch.tv/abyssonym
+Author:     https://github.com/abyssonym
+Forker:     https://github.com/EliteSoba
+URL:        https://github.com/EliteSoba/aos_rando
+Contact:    https://twitter.com/elite_soba
+            https://www.twitch.tv/elite_soba
 
 --- ABOUT ---
-    This is an item randomizer in the same vein as the LttP and Super Metroid item randomizers. Every seed should be beatable, but IANACE (I Am Not A Castlevania Expert).
+    This is abyssonym's AoS item randomizer, but with a glitched mode to allow for tricks commonly used in the Any% and All Bosses No0HP No ESG speedruns like bat zips.
+    
+    Also, randomtools was removed as a submodule to make things easier to track/download
 
 --- FAQ ---
-Q: How do I make/play a custom seed?
-A: Type the secret code "custom" in the flags section of the randomizer. It will ask you for another filename. This is where you input the name of a custom seed file such as "custom_example.txt" or "custom_early_bat.txt". For detailed information on how to create a custom seed file of your own, see the file named "custom_template.txt".
+Q: What's different about glitched mode compared to the original?
+A:
+  Black Panther removed as a requirement when Flying Armor will suffice
+    Rationale: Deincentivize Black Panther to force more backdash canceling for movement
+  Vanilla Gravekeeper
+    Rationale: Make backdash canceling immediately available to encourage good movement
+  Catoblepass room accessible with Gravekeeper and Flying Armor
+    Rationale: Important Any% No 0HP strat, so want it in logic
+  Floating Garden available with just Malphas
+    Rationale: Important Any% No 0HP strat, so want it in logic
+  Arena available with Floating Garden access + Gravekeeper
+    Rationale: Important Any% No 0HP strat, so we want it in logic
+  Bat zips are in logic
+    Rationale: Bat zips are an important part of glitched categories, and make things more dynamic
+    Literally the only places not in logic with only bat zips are post-Graham room, the two Skula-required Clock Tower items, and anything underwater
+  Shop Glitch (Not ESG) is allowed
+    Rationale: It's a safety strat for some speedrun categories and adds an interesting dynamic of how many times do you want to do shop glitch to buy more expensive items. The actual reason is that I'm lazy and having over 100 potions and immediate access to Claimh makes things easier for me. Given how fast you can be thrown into Arena/Top Floor, I think this is a fair compromise
 
-Q: What is "Chaos Mode"?
-A: "Chaos Mode" is the hard version of the randomizer, not to confused with Aria of Sorrow's "hard mode". To play Chaos Mode, type "chaos" when the randomizer asks for flags. Chaos Mode differs from the casual mode in a number of ways:
-    - Chaos Mode may not be completeable without the use of tricks, such as precise jumps and damage boosts.
-    - Chaos Mode is much more aggressively linear than casual mode. This refers to both game balance and area progression.
-    - If a soul isn't necessary to complete the game, it may never appear. So, some seeds may not have backdash or hippogryph.
-    - Please note that Chaos mode doesn't pull any punches. In a Skula-first run, you may find yourself in the Arena with very few resources.
-    - Zips are NOT accounted for in Chaos mode, because I'm not very familiar with them. I may add another mode in the future that requires zips to complete.
+Q: Can't you skip straight to Chaos once you can bat zip?
+A: Yes, but please don't. The goal I'd suggest for these runs is No 0HP No ESG All Bosses. The other category I'd suggest is No 0HP No ESG Graham+Julius+Chaos. This latter category I'd like to dub PleaseDontZipIntoChaoticRealm%
 
-Q: I equipped Flame Demon, Giant Bat, and Succubus, but the game won't let me progress! What's going on?
-A: As of version 7, the souls you need to get the good ending are randomized. Find the Ancient Book items for hints on what those souls are.
+Q: What zips are added to the logic?
+A:
+  Top Floor to Forbidden Zone
+    Use Any% strat to get there from Top Floor. Lets Skula be at Claimh location
+    Can zip to Forbidden from Study or Clock Tower too, but you can't access Claimh with those
+  Eastern Reservoir from Inner Corridor or Forbidden Zone
+    You can zip in through vanilla Flying Armor or vanilla Handgun, but many locations are inaccessible without Skula
+    The only time you can get stuck is if you try to zip to vanilla Rune Ring so don't do that
+  Any% Chaotic Realm Zip
+    Lets you go from Chaotic Realm Chapel Save to Chaos without Skula
+  Zip to room after Chronomage
+    This one's a bit tricky and took me a while to find, because I don't think any reasonable speedrun uses it:
+    In the top room of Dance Hall, on the platform right above the entrance to the right room, zip to the right and suspend once you enter the right room. From here, you'll be in the Post-Chronomage room but out of bounds, go up to enter the room with the items, and position yourself on the roof above the entry hole, and jump to scroll vertically (this tile of the room loops vertically). From here you can get out by zipping to the right to go to right before Chronomage room, or you can just enter the Chronomage room from the back and get booted out.
+    The other option is to do the All Bosses post-Big Golem zip that takes you to the connector between Dance Hall and Inner Quarters, and suspend in the connector room
+  Pre-Arena item accessible with zip in Giant Worm room (Left of Reservoir tall room save)
+    This is the only time you'll ever see this room in a run
+  Most other zips just save time and don't actually sequence break (ex: anything that leads to Top Floor)
 
-Q: Do I have to farm enemy souls to get the good ending?
-A: No, the required souls are hidden in the castle in soul statues. You never have to farm enemy souls.
-
-Q: What about to get ability souls like double jump or backdash?
-A: Those are all still in the game as pickups. You can get them all without ever farming enemy souls.
-
-Q: What about rush souls, for getting past the waterfall?
-A: There will be at least one rush soul obtainable without farming, too.
-
-Q: Uh-oh, I got required souls from an enemy... does that mean I have to farm them?
-A: No, an enemy can still drop them, but they are also hidden in statues. You never have to farm.
-
-Q: What if I don't randomize items, just enemy souls? How do I get the good ending?
-A: In that case, the appropriate enemies will drop their normal souls.
+Q: What isn't actually required in this logic?
+A:
+  Gravekeeper only for Inner Corridor
+    Rationale: Any% No 0HP doesn't do this and I don't want to do this
+  Kicker Skeleton for Progression
+    Rationale: No main category does this and I don't want to do this either
+  Chronomage to access Galamoth Items
+    Rationale: I recently discovered this was a thing, but I don't want to do this either
+  Chaotic Realm for Progression
+    Rationale: If you do this your only escape is fighting Julius or desperately trying to zip out of the boss room, and no category really has you ever leave Chaotic Realm so it's not a valuable skill. (Plus, I don't want to do this)
 
 --- HOW TO USE ---
 Running the randomizer:
@@ -59,43 +84,6 @@ Output files:
     The randomizer will output a new, randomized rom with the seed in the filename.
 
 --- SECRET CODES ---
-To use these codes, type the corresponding word when prompted to use your preferred flags.
+Same as the original AoS randomizer, but with one more code
 
-chaos: A "hard mode" of sorts. Adds in some tricky jumps to the logic, and potentially removes some ability souls from the pool.
-custom: Used for making custom seeds. An example is included in the main folder.
-famine: Removes all healing items from the item pool.
-
-nosoul: Self explanatory, all non progression souls are removed.
-nodrop: Self explanatory, all monster drops, including their soul drop, are removed.
-noshop: Self explanatory, Hammer sells you nothing.
-oopsallsouls: Makes every item placed in world a soul drop, except for the soul books.
-
-goodmoney: Stops random mimics from being placed in item locations.
-vanillagraham: Preserves the vanilla soul requirements for the true good ending.
-balance: Scales monster drops based off their original values.
-noob: Exposes the entire map and turns on the peeping eye effect permanently.
-statfix: Fixes the INT and LCK stats to do what they were intended to.
-intboost: Increase the INT boosts on various equipment (recommended to use with "statfix" code).
-wizard: Raises base MP regen and makes Wooden Golem and Rune Ring more effective.
-
-guncula: Only weapons placed and found are guns (Handgun, Silver Gun, Positron Rifle).
-fistula: Only weapons placed and found are fists (all the fist attachments).
-assassin: Only weapons placed and found are knives and katanas.
-
-Like this randomizer? Be sure to check out my other projects:
-    FF6 Beyond Chaos Randomizer
-        https://github.com/abyssonym/beyondchaos
-    FF Tactics Rumble Chaos Crashdown Randomizer
-        https://github.com/abyssonym/rumble_chaos_crashdown
-    Breath of Fire 2 Painsong Randomizer
-        https://github.com/abyssonym/painsong
-    Chrono Trigger Eternal Nightmare Randomizer
-        https://github.com/abyssonym/eternalnightmare
-    Final Fantasy Mystic Quest Terrible Secret Randomizer
-        https://github.com/abyssonym/terriblesecret
-    Super Mario RPG Gentle Beauty and Raw Power Randomizer
-        https://github.com/abyssonym/smrpg_gbarp
-    FF5 Grand Cross Randomizer
-        https://github.com/abyssonym/grand_cross
-    FF4 Beyond Babil Ancient Cave Randomizer
-        https://github.com/abyssonym/beyond_babil
+glitched: Uses glitched logic for progression. Pretty much only recommended if you're comfortable with the Any% No0HP No ESG route
