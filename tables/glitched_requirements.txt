@@ -19,7 +19,7 @@
 .def floating_garden malphas
 .def arena floating_garden&backdash|skula&malphas
 .def reservoir skula&malphas|arena&malphas|study&batzip
-.def eastern_reservoir reservoir&malphas&panther|reservoir&hippogryph|batzip
+.def eastern_reservoir reservoir&malphas&panther&skula|reservoir&hippogryph&skula|batzip
 .def cemetary arena
 .def clock_tower inner_corridor&hippogryph|floating_garden|arena&batzip
 .def top_floor inner_quarters&hippogryph|arena&batzip|clock_tower&batzip
